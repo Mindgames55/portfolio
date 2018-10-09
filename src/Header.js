@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Menu} from 'styled-icons/material/';
+import MenuButton from './MenuButton.js';
 import MenuComp from './Menu.js';
 import transition from "styled-transition-group";
 
@@ -39,17 +39,18 @@ const ScaleMenu = transition.div`
 
 export default class Header extends React.Component{
   state = {
-    show: false
+    show: false,
+    open: false
   }
 
   toggleMenu = () => {
-    this.setState({show: !this.state.show});
+    this.setState({show: !this.state.show, open: !this.state.open});
   }
 
   render() {
     return (
       <StyledHeader>
-        <Menu size='50' role="button" onClick={this.toggleMenu}/>
+        <MenuButton role="button" toggleMenu={this.toggleMenu} open={this.state.open} />
         <StyledH1>Mayguen Ojeda </StyledH1>
         <ScaleMenu in={this.state.show} timeout={400} unmountOnExit>
             <MenuComp />
