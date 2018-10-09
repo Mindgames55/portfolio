@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Main from './Main.js';
+import Header from './Header.js';
+import Connect from './Connect.js';
+import styled from 'styled-components';
+
+const StyledApp = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 90px 1fr 130px;
+  align-items: center;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <StyledApp>
+        <Header />
+        <Main />
+        <Connect />
+      </StyledApp>
     );
   }
 }
