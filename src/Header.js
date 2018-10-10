@@ -40,17 +40,18 @@ const ScaleMenu = transition.div`
 export default class Header extends React.Component{
   state = {
     show: false,
-    open: false
+    open: false,
+    menuClicked: false
   }
 
   toggleMenu = () => {
-    this.setState({show: !this.state.show, open: !this.state.open});
+    this.setState({show: !this.state.show, open: !this.state.open, menuClicked: true});
   }
 
   render() {
     return (
       <StyledHeader>
-        <MenuButton role="button" toggleMenu={this.toggleMenu} open={this.state.open} />
+        <MenuButton role="button" toggleMenu={this.toggleMenu} open={this.state.open} menuClicked={this.state.menuClicked} />
         <StyledH1>Mayguen Ojeda </StyledH1>
         <ScaleMenu in={this.state.show} timeout={400} unmountOnExit>
             <MenuComp />
