@@ -3,31 +3,11 @@ import styled from 'styled-components';
 
 const StyledMain = styled.div`
   display: grid;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   grid-row: 2/3;
-  align-self: stretch;
   position: relative;
+  justify-items: center;
 `;
 
-// const Styleimg = styled.div`
-//   width: 100%;
-//   background-image: url(${profile});
-//   background-size: cover;
-// `;
-
-const StyleShowCase = styled.div`
-  background: #000;
-  opacity: 0.5;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-
-  p {
-    color: #fff;
-    font-size: 1.2em;
-  }
-`;
 
 export default class Main extends React.Component{
 
@@ -51,11 +31,9 @@ export default class Main extends React.Component{
   render() {
     return (
       <StyledMain>
-        <StyleShowCase>
-          <p> Hello</p>
+          <h2> Hello</h2>
           <p> I am a {this.state.profession} and</p>
           <p> I love {this.state.hobby}</p>
-        </ StyleShowCase>
       </StyledMain>
     );
   }

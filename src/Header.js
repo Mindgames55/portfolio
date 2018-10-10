@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import MenuButton from './MenuButton.js';
 import MenuComp from './Menu.js';
-import transition from "styled-transition-group";
+import transition from 'styled-transition-group';
 
 const StyledHeader = styled.div`
   display: grid;
@@ -10,6 +10,7 @@ const StyledHeader = styled.div`
   justify-items: center;
   align-items: center;
   position: relative;
+  border-bottom: 1px solid black;
 `;
 
 const StyledH1 = styled.h1`
@@ -18,12 +19,14 @@ const StyledH1 = styled.h1`
 
 const ScaleMenu = transition.div`
   display: grid;
+  width: 90%;
+  height: 110px;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  justify-items: center;
   position: absolute;
-  border: 1px solid red;
   top: 110%;
   z-index: 100;
+  overflow-x: hidden;
 
   &:enter { width : 0; }
   &:enter-active {
@@ -39,9 +42,7 @@ const ScaleMenu = transition.div`
 
 export default class Header extends React.Component{
   state = {
-    show: false,
-    open: false,
-    menuClicked: false
+    show: false
   }
 
   toggleMenu = () => {
@@ -51,7 +52,7 @@ export default class Header extends React.Component{
   render() {
     return (
       <StyledHeader>
-        <MenuButton role="button" toggleMenu={this.toggleMenu} open={this.state.open} menuClicked={this.state.menuClicked} />
+        <MenuButton role="button" toggleMenu={this.toggleMenu} />
         <StyledH1>Mayguen Ojeda </StyledH1>
         <ScaleMenu in={this.state.show} timeout={400} unmountOnExit>
             <MenuComp />

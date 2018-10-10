@@ -9,7 +9,7 @@ const StyledApp = styled.div`
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-rows: 90px 1fr 130px;
+  grid-template-rows: 70px 1fr 130px;
   align-items: center;
 `;
 
