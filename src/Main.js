@@ -6,6 +6,7 @@ const StyledMain = styled.div`
   display: grid;
   grid-row: 2/3;
   position: relative;
+  justify-items: center;
 
   h2{
     font-size: 38px;
