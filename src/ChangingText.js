@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import posed from 'react-pose';
+import posed, { PoseGroup } from 'react-pose';
 
 const ContainerDiv = styled.div`
   position: relative;
   overflow: hidden;
+  height: 40px;
 `;
 
 const StyledSpanPro = styled.span`
@@ -16,9 +17,9 @@ const StyledSpanPro = styled.span`
 `;
 
 const SlideIn = posed(StyledSpanPro)({
-  down: {top: '100%'},
-  on: {top: '0%', opacity:1},
-  top: {top: '-100%', opacity:0}
+  enter: {top: '0%'},
+  exit: {top: '-100%', opacity:0, transition: { delay: 1500 }},
+  preEnter: {top: '100%', opacity: 1}
 });
 
 export default class Profession extends React.Component {
@@ -27,7 +28,7 @@ export default class Profession extends React.Component {
     professions: ['React Developer', 'Javascript developer','Front-End Developer'],
     hobby: 'learning new stuff',
     hobbies: ['coding', 'weather','music','outdoor adventures','math','physics','learning new stuff'],
-    pose: 'on'
+    isVisible: false
   }
 
   componentDidMount() {
@@ -35,29 +36,22 @@ export default class Profession extends React.Component {
       this.setState(prev => ({
         profession: this.state.professions[(this.state.professions.indexOf(prev.profession) === (this.state.professions.length - 1))?0:this.state.professions.indexOf(prev.profession)+1],
         hobby: this.state.hobbies[(this.state.hobbies.indexOf(prev.hobby) === (this.state.hobbies.length - 1))?0:this.state.hobbies.indexOf(prev.hobby)+1],
-        pose: 'on'
+        isVisible: !this.state.isVisible
         })
       )
-    },8000);
-    setInterval(() => {
-      this.setState(prev => ({
-        pose: 'top'
-        })
-      )
-    },7000);
-    setInterval(() => {
-      this.setState(prev => ({
-        pose: 'down'
-        })
-      )
-    },7500);
+    },2000);
+
   }
 
   render() {
-    let pose = this.state.pose;
     return (
       <ContainerDiv>
-        <SlideIn pose={pose}>{(this.props.value === 'profession')?this.state.profession:this.state.hobby} </SlideIn>
+        <PoseGroup preEnterPose='preEnter'>
+          {this.state.isVisible &&
+            <SlideIn key={this.props.value} >
+              {(this.props.value === 'profession')?this.state.profession:this.state.hobby}
+            </SlideIn>}
+        </PoseGroup>
       </ContainerDiv>
     );
   }
