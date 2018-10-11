@@ -1,27 +1,33 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import posed from 'react-pose';
 
-const slideIn = keyframes`
-  from {top: 100%;}
-  to {top: 0;}
+const ContainerDiv = styled.div`
+  position: relative;
+  overflow: hidden;
 `;
 
 const StyledSpanPro = styled.span`
   font-size: 32px;
   position: relative;
-  top: 100%;
   z-index: 1000;
-
-  ${props => {console.log(props.value); return((props.value === 'profession')?`animation: ${slideIn} 1s ease-in forwards`:`animation: ${slideIn} 2s ease-in forwards`)}};
+  opacity: 1;
+  top: 100%;
 `;
 
-export default class Profession extends React.Component {
+const SlideIn = posed(StyledSpanPro)({
+  down: {top: '100%'},
+  on: {top: '0%', opacity:1},
+  top: {top: '-100%', opacity:0}
+});
 
+export default class Profession extends React.Component {
   state = {
     profession: 'Front-End Developer',
     professions: ['React Developer', 'Javascript developer','Front-End Developer'],
     hobby: 'learning new stuff',
-    hobbies: ['coding', 'weather','music','outdoor adventures','math','physics','learning new stuff']
+    hobbies: ['coding', 'weather','music','outdoor adventures','math','physics','learning new stuff'],
+    pose: 'on'
   }
 
   componentDidMount() {
@@ -29,14 +35,30 @@ export default class Profession extends React.Component {
       this.setState(prev => ({
         profession: this.state.professions[(this.state.professions.indexOf(prev.profession) === (this.state.professions.length - 1))?0:this.state.professions.indexOf(prev.profession)+1],
         hobby: this.state.hobbies[(this.state.hobbies.indexOf(prev.hobby) === (this.state.hobbies.length - 1))?0:this.state.hobbies.indexOf(prev.hobby)+1],
+        pose: 'on'
         })
       )
-    },5000);
+    },8000);
+    setInterval(() => {
+      this.setState(prev => ({
+        pose: 'top'
+        })
+      )
+    },7000);
+    setInterval(() => {
+      this.setState(prev => ({
+        pose: 'down'
+        })
+      )
+    },7500);
   }
 
   render() {
+    let pose = this.state.pose;
     return (
-      <StyledSpanPro value={this.props.value}>{(this.props.value === 'profession')?this.state.profession:this.state.hobby} </StyledSpanPro>
+      <ContainerDiv>
+        <SlideIn pose={pose}>{(this.props.value === 'profession')?this.state.profession:this.state.hobby} </SlideIn>
+      </ContainerDiv>
     );
   }
 }
