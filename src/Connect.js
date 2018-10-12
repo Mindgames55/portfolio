@@ -8,12 +8,13 @@ const StyledConnect = styled.div`
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   justify-items: center;
+  grid-row: -2/-1;
 `;
 
 export default class Connect extends React.Component{
   render(){
     return(
-      <StyledConnect>
+      <StyledConnect theme={this.props.theme}>
         <GithubAlt size="50"/>
         <LinkedinIn size="50"/>
         <FacebookF size="50"/>

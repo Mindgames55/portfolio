@@ -5,14 +5,14 @@ import posed, { PoseGroup } from 'react-pose';
 const ContainerDiv = styled.div`
   position: relative;
   overflow-y: hidden;
-  height: 40px;
   width: 100%;
-
+  height: 100%;
 `;
 
-const StyledSpanPro = styled.span`
+const StyledSpanPro = styled.p`
   font-size: 25px;
   position: absolute;
+  text-align: center;
   width: 100%;
   text-align: center;
 `;

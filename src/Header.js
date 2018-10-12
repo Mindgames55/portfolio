@@ -24,7 +24,7 @@ const ScaleMenu = transition.div`
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   position: absolute;
-  top: 110%;
+  top: 115%;
   z-index: 100;
   overflow-x: hidden;
 

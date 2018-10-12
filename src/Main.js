@@ -4,16 +4,21 @@ import ChangingText from './ChangingText.js'
 
 const StyledMain = styled.div`
   display: grid;
-  grid-row: 2/3;
+  grid-template-rows: 50px repeat(4, 1fr);
+  grid-row: 3/4;
   position: relative;
   justify-items: center;
 
   h2{
     font-size: 38px;
+    margin: 0;
   }
 
   p {
-    font-size: 32px;
+    font-size: 25px;
+    margin: 0;
+    padding: 20px 0;
+
   }
 `;
 
