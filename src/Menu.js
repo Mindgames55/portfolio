@@ -21,8 +21,18 @@ let icons = [
 ]
 
 const StyledLink = styled(Link)`
-  background-color: #000;
-  opacity: 0.5;
+  background-color: ${props => {
+    switch (props.link) {
+      case 'home':
+        return props.theme.primary;
+      case 'about':
+        return props.theme.secondary;
+      case 'skills':
+        return props.theme.primaryDark;
+      default:
+        return props.theme.secondaryDark;
+    }
+  }};
   color: white;
   width: 70px;
   height: 70px;
@@ -46,7 +56,7 @@ class MenuComp extends React.Component {
   render(){
     return (
       <React.Fragment>
-        {menuLinks.map((link, index) => <StyledLink key={index} to={`/${link}`}>
+        {menuLinks.map((link, index) => <StyledLink key={index} link={link} theme={this.props.theme} to={`/${link}`}>
                                           {icons[index]}
                                           <p>{link}</p>
                                         </StyledLink>)}

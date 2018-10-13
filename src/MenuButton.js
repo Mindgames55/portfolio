@@ -16,7 +16,7 @@ const StyledSpan = styled.span`
   position: absolute;
   height: 4px;
   width: 100%;
-  background: #000;
+  background: ${props => props.theme.primaryDark};
   border-radius: 4px;
   opacity: 1;
   left: 0;
@@ -24,6 +24,8 @@ const StyledSpan = styled.span`
 
 :nth-child(1) {
   top: 0px;
+
+
 }
 
 :nth-child(2) {

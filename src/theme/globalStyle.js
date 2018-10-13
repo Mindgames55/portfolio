@@ -8,6 +8,7 @@ injectGlobal`
     padding: 0;
     margin: 0;
     font-family: Roboto, sans-serif;
+    color: #3d3d3d;
   }
 
   h1 {
@@ -15,5 +16,10 @@ injectGlobal`
   }
 `
   export const theme = {
-    primary: '#6e27c5'
+    primary: '#57a0ff',
+    primaryLight: '#91d1ff',
+    primaryDark: '#0072cb',
+    secondary: '#e57373',
+    secondaryLight: '#ffa4a2',
+    secondaryDark: '#af4448'
   }

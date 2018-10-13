@@ -10,11 +10,12 @@ const StyledHeader = styled.div`
   justify-items: center;
   align-items: center;
   position: relative;
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid ${props => props.theme.primaryDark};
 `;
 
 const StyledH1 = styled.h1`
   align-self: start;
+  color: ${props => props.theme.primaryDark};
 `;
 
 const ScaleMenu = transition.div`
@@ -54,7 +55,7 @@ export default class Header extends React.Component{
       <StyledHeader>
         <MenuButton role="button" toggleMenu={this.toggleMenu} />
         <StyledH1>Mayguen Ojeda </StyledH1>
-        <ScaleMenu in={this.state.show} timeout={400} unmountOnExit>
+        <ScaleMenu  in={this.state.show} timeout={400} unmountOnExit>
             <MenuComp />
         </ScaleMenu>
       </StyledHeader>
