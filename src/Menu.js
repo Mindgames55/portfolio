@@ -56,7 +56,7 @@ class MenuComp extends React.Component {
   render(){
     return (
       <React.Fragment>
-        {menuLinks.map((link, index) => <StyledLink key={index} link={link} theme={this.props.theme} to={`/${link}`}>
+        {menuLinks.map((link, index) => <StyledLink key={index} link={link} onClick={this.props.toggleMenu} theme={this.props.theme} to={`/${link}`}>
                                           {icons[index]}
                                           <p>{link}</p>
                                         </StyledLink>)}

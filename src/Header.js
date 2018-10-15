@@ -56,7 +56,7 @@ export default class Header extends React.Component{
         <MenuButton role="button" toggleMenu={this.toggleMenu} />
         <StyledH1>Mayguen Ojeda </StyledH1>
         <ScaleMenu  in={this.state.show} timeout={400} unmountOnExit>
-            <MenuComp />
+            <MenuComp toggleMenu={this.toggleMenu}/>
         </ScaleMenu>
       </StyledHeader>
     );

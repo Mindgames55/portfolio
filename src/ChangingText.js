@@ -9,31 +9,30 @@ const ContainerDiv = styled.div`
   height: 100%;
 `;
 
-const StyledSpanPro = styled.p`
-  font-size: 25px;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  text-align: center;
-`;
-
-const SlideIn = posed(StyledSpanPro)({
+const SlideIn = styled(posed.p({
   enter: {top: '0%'},
   exit: {opacity:0, transition: { delay: 1500}},
   preEnter: {top: '100%', opacity: 1}
-});
+}))`
+font-size: 25px;
+position: absolute;
+width: 100%;
+text-align: ${props => (props.value === 'profession')?'right':'center'};
+`;
 
 export default class Profession extends React.Component {
   state = {
-    profession: 'Front-End developer',
-    professions: ['React developer', 'Javascript developer','Front-End developer'],
+    profession: 'Front-End',
+    professions: ['React', 'Javascript','Front-End'],
     hobby: 'learning new stuff',
     hobbies: ['coding', 'weather','music','outdoor adventures','math','physics','learning new stuff'],
     isVisible: true
   }
 
+  counter: null
+
   componentDidMount() {
-    setInterval(() => {
+    this.counter = setInterval(() => {
       this.setState(prev => (this.props.value === 'profession')?({
         profession: prev.professions[(prev.professions.indexOf(prev.profession) === (prev.professions.length - 1))?0:prev.professions.indexOf(prev.profession)+1],
         isVisible: !prev.isVisible
@@ -46,7 +45,10 @@ export default class Profession extends React.Component {
         )
       )
     },2000);
+  }
 
+  componentWillUnmount() {
+    clearInterval(this.counter);
   }
 
   render() {
@@ -55,7 +57,7 @@ export default class Profession extends React.Component {
       <ContainerDiv>
         <PoseGroup preEnterPose='preEnter'>
           {this.state.isVisible &&
-            <SlideIn key={this.props.value} >
+            <SlideIn key={this.props.value} value={this.props.value} >
               {(this.props.value === 'profession')?this.state.profession:this.state.hobby}
             </SlideIn>}
         </PoseGroup>

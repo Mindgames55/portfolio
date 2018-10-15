@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Facebook, Github, Linkedin, MessageSquare} from 'styled-icons/feather';
-import {Email} from 'styled-icons/material';
 
 const StyledConnect = styled.div`
   display: grid;
