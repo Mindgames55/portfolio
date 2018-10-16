@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import posed from "react-pose";
 
-
-
 const StyledDiv = styled.div`
 width: 50px;
 height: 37px;

@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import Main from './Main.js';
+import Home from './Home.js';
 import Header from './Header.js';
-import Connect from './Connect.js';
 import styled, { ThemeProvider} from 'styled-components';
 import { theme } from './theme/globalStyle'
 import { Route } from 'react-router-dom';
-import Projects from './Projects.js'
+import Projects from './Projects.js';
 
 const StyledApp = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
-  grid-template-rows: 70px 1fr 130px;
-  align-items: center;
+  grid-template-rows: 90px 1fr auto;
 `;
 
 class App extends Component {
@@ -22,10 +20,9 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <StyledApp>
           <Header />
-          <Route exact path='/home' render={() =>   <Main />} />
-          <Route  path='/projects' render={() =>   <Projects />} />
+          <Route exact path='/' render={() =>   <Home />} />
+          <Route path='/projects' render={() =>   <Projects />} />
 
-          <Connect />
         </StyledApp>
       </ThemeProvider>
     );

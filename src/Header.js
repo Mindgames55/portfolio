@@ -1,64 +1,84 @@
 import React from 'react';
 import styled from 'styled-components';
-import MenuButton from './MenuButton.js';
-import MenuComp from './Menu.js';
-import transition from 'styled-transition-group';
+import Menu from './Menu.js';
+import posed from 'react-pose';
 
-const StyledHeader = styled.div`
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  justify-items: center;
+
+const ButtonDiv = styled.div`
+width: 50px;
+height: 37px;
+position: relative;
+cursor: pointer;
+`;
+
+const Header = styled.div`
+  height: 100%
+  display: flex;
   align-items: center;
-  position: relative;
-  border-bottom: 3px solid ${props => props.theme.primaryDark};
+  margin: 0 20px;
 `;
 
-const StyledH1 = styled.h1`
-  align-self: start;
-  color: ${props => props.theme.primaryDark};
-`;
-
-const ScaleMenu = transition.div`
-  display: grid;
-  width: 90%;
-  height: 110px;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
+const StyledSpan = styled.span`
+  display: block;
   position: absolute;
-  top: 115%;
-  z-index: 100;
-  overflow-x: hidden;
+  height: 4px;
+  width: 100%;
+  background: #000;
+  border-radius: 4px;
+  opacity: 1;
+  left: 0;
+  transform-origin: left center;
 
-  &:enter { width : 0; }
-  &:enter-active {
-    width: 100%;
-    transition: width 400ms ease-out;
-  }
-  &:exit { width: 100%; }
-  &:exit-active {
-    width: 0;
-    transition: width 400ms ease-in;
-  }
+:nth-child(1) {
+  top: 0px;
+}
+
+:nth-child(2) {
+  top: 18px;
+}
+
+:nth-child(3) {
+  top: 36px;
+}
 `;
 
-export default class Header extends React.Component{
-  state = {
-    show: false
-  }
+const Topbar = posed(StyledSpan)({
+  open: {transform: 'rotate(45deg)'},
+  close: {transform: 'rotate(0deg)'}
+});
 
-  toggleMenu = () => {
-    this.setState({show: !this.state.show, open: !this.state.open, menuClicked: true});
-  }
+const Bottombar = posed(StyledSpan)({
+  open: {transform: 'rotate(-45deg)'},
+  close: {transform: 'rotate(0deg)'}
+});
 
-  render() {
-    return (
-      <StyledHeader>
-        <MenuButton role="button" toggleMenu={this.toggleMenu} />
-        <StyledH1>Mayguen Ojeda </StyledH1>
-        <ScaleMenu  in={this.state.show} timeout={400} unmountOnExit>
-            <MenuComp toggleMenu={this.toggleMenu}/>
-        </ScaleMenu>
-      </StyledHeader>
-    );
-  }
+const Middlebar = posed(StyledSpan)({
+  open: {width: 0, opacity: 0},
+  close: {width: '100%', opacity: 1}
+});
+
+export default class MenuButton extends React.Component {
+    state = {
+      open: false
+    }
+
+    toggleMenu = () => {
+      this.setState({open: !this.state.open});
+    }
+
+    render() {
+      let pose = (this.state.open)?'open':'close';
+      return (
+        <React.Fragment>
+            <Header key='header'>
+              <ButtonDiv role="button" onClick={this.toggleMenu} >
+                <Topbar pose={pose}></Topbar>
+                <Middlebar pose={pose}></Middlebar>
+                <Bottombar pose={pose}></Bottombar>
+              </ButtonDiv>
+            </Header>
+            {(this.state.open) && <Menu toggleMenu={this.toggleMenu} />}
+        </React.Fragment>
+      );
+    }
 }

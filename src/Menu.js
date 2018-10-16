@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import {Home, Code} from 'styled-icons/material';
 import {LaptopCode} from 'styled-icons/fa-solid/LaptopCode';
 import {User} from 'styled-icons/fa-solid/User';
-
+import posed from 'react-pose';
+import Footer from './Footer.js';
 
 let menuLinks = [
   'home',
@@ -20,20 +21,23 @@ let icons = [
   <LaptopCode size='30'/>
 ]
 
+const StyledMenu = styled(posed.div({
+  open: {y: 0},
+  close: {y: '-100%'}
+}))`
+  grid-row: 2/4;
+  display: grid
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 130px;
+  justify-self: center;
+  align-self: center;
+  grid-gap: 70px;
+  height: calc(100vh - 100px);
+`;
+
 const StyledLink = styled(Link)`
-  background-color: ${props => {
-    switch (props.link) {
-      case 'home':
-        return props.theme.primary;
-      case 'about':
-        return props.theme.secondary;
-      case 'skills':
-        return props.theme.primaryDark;
-      default:
-        return props.theme.secondaryDark;
-    }
-  }};
   color: white;
+  background: black;
   width: 70px;
   height: 70px;
   text-decoration: none;
@@ -52,18 +56,14 @@ const StyledLink = styled(Link)`
   }
 `;
 
-class MenuComp extends React.Component {
-  render(){
-    return (
-      <React.Fragment>
-        {menuLinks.map((link, index) => <StyledLink key={index} link={link} onClick={this.props.toggleMenu} theme={this.props.theme} to={`/${link}`}>
-                                          {icons[index]}
-                                          <p>{link}</p>
-                                        </StyledLink>)}
-      </React.Fragment>
-    );
-  }
+const Menu = (props) =>
+        <StyledMenu initialPose='close' pose='open'>
+            {menuLinks.map((link, index) =>    <StyledLink key={index} link={link} onClick={props.toggleMenu} theme={props.theme} to={(link === 'home')?'/':link}>
+                                                  {icons[index]}
+                                                  <p>{link}</p>
+                                                </StyledLink>
+                                            )}
+          <Footer foreground='black' background='white'/>
 
-}
-
-export default MenuComp
+        </StyledMenu>
+export default Menu
