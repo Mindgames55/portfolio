@@ -2,10 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import posed from 'react-pose';
 
-const SlideInRight = posed.div({
-  closed: { x: "100%" },
-  open: { x: "0", transition: {delay: 800}}
-});
+
 
 const SlideInBottom = posed.div({
   closed: { y: "100%", opacity: 0 },
@@ -31,9 +28,6 @@ const ProjectDiv = styled.div`
   align-items: center;
 `;
 
-const StyledSkillsDiv = styled(FadeIn)`
-  grid-column: 2/4;
-`;
 
 const StyledTitle = styled(FadeIn)`
   grid-column: 2/3;
@@ -47,11 +41,7 @@ const FittedSpan = styled(Grow)`
   align-self: start;
 `;
 
-const ImgDiv = styled(SlideInRight)`
-  background: black;
-  grid-column: 1/-1;
-  align-self: stretch;
-`;
+
 
 const StyledButton = styled(SlideInBottom)`
   grid-column: -3/-2;
@@ -69,8 +59,7 @@ export default class Project extends React.Component {
       <ProjectDiv>
           <StyledTitle initialPose="closed" pose="open">{this.props.title}</StyledTitle>
           <FittedSpan initialPose="closed" pose="open"/>
-          <StyledSkillsDiv initialPose="closed" pose="open"> {this.props.children}</StyledSkillsDiv>
-          <ImgDiv initialPose="closed" pose="open"/>
+          {this.props.children}
           <StyledButton initialPose="closed" pose="open">Learn More</StyledButton>
       </ProjectDiv>
     );
