@@ -1,22 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 import posed from 'react-pose';
+import Waypoint from 'react-waypoint';
 
 
+const SlideInRight = posed.div({
+  closed: { x: "100%", opacity: 0 },
+  open: { x: "0", opacity: 1}
+});
 
 const SlideInBottom = posed.div({
   closed: { y: "100%", opacity: 0 },
-  open: { y: "0", opacity: 1, transition: {delay: 1300}}
+  open: { y: "0", opacity: 1}
 });
 
 const FadeIn = posed.div({
   closed: { opacity: 0},
-  open: { opacity: 1 }
+  open: { opacity: 1}
 });
 
 const Grow = posed.div({
   closed: { width: 0},
-  open: { width: '100%', transition: {delay: 500} }
+  open: { width: '100%'}
 });
 
 const ProjectDiv = styled.div`
@@ -28,8 +33,11 @@ const ProjectDiv = styled.div`
   align-items: center;
 `;
 
+const StyledSkillsDiv = styled(FadeIn)`
+  grid-column: 2/3;
+`;
 
-const StyledTitle = styled(FadeIn)`
+const StyledTitle = styled(SlideInRight)`
   grid-column: 2/3;
 `;
 
@@ -42,9 +50,16 @@ const FittedSpan = styled(Grow)`
 `;
 
 
+const ImgDiv = styled(FadeIn)`
+  background-image: ${props => `url(${props.src})`};
+  background-size: cover;
+  grid-column: 1/-1;
+  align-self: stretch;
+`;
 
 const StyledButton = styled(SlideInBottom)`
   grid-column: -3/-2;
+  grid-row: -2/-1;
   justify-self: right;
   padding: 20px;
   background: black;
@@ -54,14 +69,27 @@ const StyledButton = styled(SlideInBottom)`
 
 
 export default class Project extends React.Component {
+
+  state = {
+    pose: 'closed'
+  }
+
+  projectInView = () => {
+    console.log('inview');
+    this.setState({pose: 'open'});
+  }
   render() {
+    console.log(this.state.pose);
     return (
-      <ProjectDiv>
-          <StyledTitle initialPose="closed" pose="open">{this.props.title}</StyledTitle>
-          <FittedSpan initialPose="closed" pose="open"/>
-          {this.props.children}
-          <StyledButton initialPose="closed" pose="open">Learn More</StyledButton>
-      </ProjectDiv>
+      <Waypoint onEnter={this.projectInView} bottomOffset='200px'>
+        <ProjectDiv ref={this.props.innerRef}>
+            <StyledTitle pose={this.state.pose}>{this.props.title}</StyledTitle>
+            <FittedSpan pose={this.state.pose}/>
+            <StyledSkillsDiv pose={this.state.pose}>{this.props.children}</StyledSkillsDiv>
+            <ImgDiv src={this.props.src} pose={this.state.pose}/>
+            <StyledButton pose={this.state.pose}>Learn More</StyledButton>
+        </ProjectDiv>
+      </Waypoint>
     );
   }
 }

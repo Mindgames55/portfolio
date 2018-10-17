@@ -10,6 +10,7 @@ injectGlobal`
     font-family: Roboto, sans-serif;
     color: #3d3d3d;
     background: #f6f6f6;
+    overflow-x: hidden;
   }
 
   h1 {
