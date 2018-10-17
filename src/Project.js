@@ -39,6 +39,7 @@ const StyledSkillsDiv = styled(FadeIn)`
 
 const StyledTitle = styled(SlideInRight)`
   grid-column: 2/3;
+  text-transform: uppercase;
 `;
 
 const FittedSpan = styled(Grow)`
@@ -52,7 +53,9 @@ const FittedSpan = styled(Grow)`
 
 const ImgDiv = styled(FadeIn)`
   background-image: ${props => `url(${props.src})`};
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   grid-column: 1/-1;
   align-self: stretch;
 `;
