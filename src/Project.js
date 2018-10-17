@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import posed from 'react-pose';
 import Waypoint from 'react-waypoint';
+import InfoDiv from './InfoDiv.js';
+import { MoreHoriz } from 'styled-icons/material/MoreHoriz';
+import { ArrowBack }from 'styled-icons/material/ArrowBack'
 
 
 const SlideInRight = posed.div({
@@ -9,7 +12,7 @@ const SlideInRight = posed.div({
   open: { x: "0", opacity: 1}
 });
 
-const SlideInBottom = posed.div({
+const SlideInBottom = posed.button({
   closed: { y: "100%", opacity: 0 },
   open: { y: "0", opacity: 1}
 });
@@ -57,6 +60,7 @@ const ImgDiv = styled(FadeIn)`
   background-repeat: no-repeat;
   background-position: center;
   grid-column: 1/-1;
+  grid-row: 4/5;
   align-self: stretch;
 `;
 
@@ -64,23 +68,38 @@ const StyledButton = styled(SlideInBottom)`
   grid-column: -3/-2;
   grid-row: -2/-1;
   justify-self: right;
-  padding: 20px;
+  padding: 15px;
   background: black;
   color: white;
   align-self: stretch;
+  border: 0;
 `;
 
 
 export default class Project extends React.Component {
 
   state = {
-    pose: 'closed'
+    pose: 'closed',
+    poseInfo: 'closed',
+    text: <MoreHoriz size='30' />
   }
 
   projectInView = () => {
     console.log('inview');
     this.setState({pose: 'open'});
   }
+
+  displayInfo = () => {
+    this.setState(prev => (prev.poseInfo === 'closed')?(
+          {poseInfo: 'open', text: <ArrowBack size='30' />}
+        )
+        :
+        (
+          {poseInfo: 'closed', text: <MoreHoriz size='30' />}
+        )
+    );
+  }
+
   render() {
     console.log(this.state.pose);
     return (
@@ -90,7 +109,8 @@ export default class Project extends React.Component {
             <FittedSpan pose={this.state.pose}/>
             <StyledSkillsDiv pose={this.state.pose}>{this.props.children}</StyledSkillsDiv>
             <ImgDiv src={this.props.src} pose={this.state.pose}/>
-            <StyledButton pose={this.state.pose}>Learn More</StyledButton>
+            <InfoDiv pose={this.state.poseInfo}>{this.props.info}</InfoDiv>
+            <StyledButton pose={this.state.pose} onClick={this.displayInfo}>{this.state.text}</StyledButton>
         </ProjectDiv>
       </Waypoint>
     );
