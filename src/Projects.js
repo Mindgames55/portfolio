@@ -1,18 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
 import Project from './Project.js';
-import { ReactLogo, Js, Css3Alt, Google} from 'styled-icons/fa-brands';
+import { ReactLogo, Js, Css3Alt, Google, Github} from 'styled-icons/fa-brands';
 import recover from './img/recover.png';
 import reads from './img/my-reads.png';
 import rest from './img/rest-rev.png';
 import arcade from './img/arcade.png';
 import memory from './img/memory.png';
+import Footer from './Footer.js';
+import posed from 'react-pose';
+import Waypoint from 'react-waypoint';
 
 
 const StyledProjects = styled.section`
 `;
 
+const MoreDiv = styled(posed.div({
+  open: {x: 0, opacity: 1, transition: {delay: 0}},
+  closed: {x: '-100%', opacity:0}
+}))`
+
+`;
+
+const StyledMore = styled(posed.section({
+  open: {x: 0, opacity: 1},
+  closed: {x: '-100%', opacity:0}
+}))`
+  display: grid;
+  grid-template-rows: 1fr 130px;
+  background: black;
+  color: white;
+  z-index: 10000;
+top: 0;
+width: 100%;
+height: 100vh;
+position: fixed;
+`;
+
 export default class Projects extends React.Component {
+
+  state = {
+    morePose: 'closed'
+  }
 
   technologies = [
     [<ReactLogo size='30' key='react'/>, ' React', ' | ', <Google size='25' key='google' />, ' Maps API'],
@@ -49,6 +78,12 @@ export default class Projects extends React.Component {
     memory
   ]
 
+  MoreInView = () => {
+    this.setState(prev => (
+      {morePose: (prev.morePose === 'closed')?'open':'closed'}
+    ))
+  }
+
   render() {
     return (
       <StyledProjects>
@@ -59,6 +94,17 @@ export default class Projects extends React.Component {
                                                         title={this.title[index]}>
                                                           {proj}
                                                     </Project>)}
+      <Waypoint onEnter={this.MoreInView} onLeave={this.MoreInView} bottomOffset='200px'/>
+      <div style={{height: '200px'}}></div>
+      <StyledMore pose={this.state.morePose}>
+
+          <MoreDiv pose={this.state.morePose}>
+            <h2>Want to see more?</h2>
+            <button>Go to my <Github size='30' /> </button>
+          </MoreDiv>
+          <Footer pose={this.state.morePose} delay={0}/>
+        </StyledMore>
+
       </StyledProjects>
     );
   }
