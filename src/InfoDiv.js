@@ -12,6 +12,12 @@ const StyledInfoDiv = styled(posed.div({
   grid-column: 1/-1;
   align-self: stretch;
   color: white;
+
+  ul {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+  }
 `;
 
 const InfoDiv = (props) => {

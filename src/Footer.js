@@ -4,7 +4,7 @@ import {Facebook, Github, Linkedin, Mail} from 'styled-icons/feather';
 import posed from 'react-pose'
 
 const StyledConnect = styled(posed.div({
-  open: {y: 0, opacity: 1, transition: {delay: props => (props.delay)?props.delay:100}},
+  open: {y: 0, opacity: 1, transition: {delay: 200}},
   close: {y: '100%', opacity: 0},
   closed: {y: '100%', opacity: 0}
 }))`
@@ -13,13 +13,13 @@ const StyledConnect = styled(posed.div({
   justify-items: center;
   grid-column: 1/-1;
   align-items: center;
-  color: ${props => props.foreground};
-  background: ${props => props.background};
 `;
 
-function Footer(props, hostRef) {
+function Footer(props) {
+
+  console.log(props);
     return(
-      <StyledConnect props={props} delay={props.delay} initialPose='close' pose={(props.pose)?props.pose:'open'}>
+      <StyledConnect props={props}>
         <p>Lets connect </p>
         <div>
           <Github size="30"/>

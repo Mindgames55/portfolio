@@ -22,7 +22,7 @@ let icons = [
 ]
 
 const StyledMenu = styled(posed.div({
-  open: {y: 0},
+  open: {y: 0, staggerChildren: 100},
   close: {y: '-100%'}
 }))`
   grid-row: 2/4;
@@ -63,7 +63,7 @@ const Menu = (props) =>
                                                   <p>{link}</p>
                                                 </StyledLink>
                                             )}
-          <Footer foreground='black' background='white'/>
+          <Footer foreground="white" background="black"/>
 
         </StyledMenu>
 export default Menu

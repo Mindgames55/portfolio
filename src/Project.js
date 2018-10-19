@@ -5,6 +5,9 @@ import Waypoint from 'react-waypoint';
 import InfoDiv from './InfoDiv.js';
 import { MoreHoriz } from 'styled-icons/material/MoreHoriz';
 import { ArrowBack }from 'styled-icons/material/ArrowBack'
+import { Code } from 'styled-icons/fa-solid/Code';
+import { Github} from 'styled-icons/fa-brands';
+
 
 
 const SlideInRight = posed.div({
@@ -12,7 +15,7 @@ const SlideInRight = posed.div({
   open: { x: "0", opacity: 1}
 });
 
-const SlideInBottom = posed.button({
+const SlideInBottom = posed.div({
   closed: { y: "100%", opacity: 0 },
   open: { y: "0", opacity: 1}
 });
@@ -64,17 +67,33 @@ const ImgDiv = styled(FadeIn)`
   align-self: stretch;
 `;
 
-const StyledButton = styled(SlideInBottom)`
-  grid-column: -3/-2;
+const StyledPanel = styled(SlideInBottom)`
+  grid-column: 2/-2;
   grid-row: -2/-1;
-  justify-self: right;
-  padding: 15px;
-  background: black;
-  color: white;
+  justify-self: center;
   align-self: stretch;
-  border: 0;
+  display: grid;
+  width: 100%;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+
+  a {
+    color: black;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 `;
 
+const StyledButton = styled.button`
+  background: black;
+  color: white;
+  border: 0;
+  height: 100%
+  padding:  10px 15px;
+  `;
 
 export default class Project extends React.Component {
 
@@ -110,7 +129,10 @@ export default class Project extends React.Component {
             <StyledSkillsDiv pose={this.state.pose}>{this.props.children}</StyledSkillsDiv>
             <ImgDiv src={this.props.src} pose={this.state.pose}/>
             <InfoDiv pose={this.state.poseInfo}>{this.props.info}</InfoDiv>
-            <StyledButton pose={this.state.pose} onClick={this.displayInfo}>{this.state.text}</StyledButton>
+            <StyledPanel pose={this.state.pose}>
+              <div><a href={this.props.link[0]} target='_blank' rel='noopener noreferrer'><Code size='30' /></a> <span style={{fontSize: '40px', textAlign: 'center'}}> | </span> <a href={this.props.link[1]} target='_blank' rel='noopener noreferrer'><Github size='30' /></a></div>
+              <StyledButton onClick={this.displayInfo}>{this.state.text}</StyledButton>
+            </StyledPanel>
         </ProjectDiv>
       </Waypoint>
     );
