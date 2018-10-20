@@ -1,13 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import ChangingText from './ChangingText.js'
+import ChangingText from './ChangingText.js';
+import Logo from './img/logo.png';
 
 const StyledMain = styled.div`
   display: grid;
-  grid-template-rows:  90px 50px repeat(4, 1fr);
-  grid-row: 2/3;
+  grid-template-rows:  90px 1fr 90px;
   position: relative;
   justify-items: center;
+  align-items: center;
+  background-image: url(${Logo});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
 
   h2{
     font-size: 38px;
@@ -18,29 +24,38 @@ const StyledMain = styled.div`
     font-size: 25px;
     margin: 0;
     padding: 20px 0;
+    color: #2B2D42;
+    font-weight: bold;
 
   }
 `;
 
-// <StyledMain>
-//     <h2> Hello</h2>
-//     <p> I am a</p>
-//      <div style={{
-//          display: 'grid',
-//          width: '100%',
-//          gridTemplateColumns: 'auto 50%',
-//          gridGap: '.5em'
-//        }}>
-//        <ChangingText value="profession" />
-//        <span>developer</span>
-//      </div>
-//      <p>and I love</p>
-//     <ChangingText value="hobby" />
-//
-// </StyledMain>
+
 
 const Home = () => {console.log('renderind'); return(
-  <div></div>
+  <StyledMain>
+       <div style={{
+           display: 'grid',
+           width: '90%',
+           gridTemplateColumns: 'auto 1fr auto',
+           gridGap: '.5em'
+         }}>
+         <span> I am a</span>
+         <ChangingText value="profession" />
+         <span>developer</span>
+       </div>
+
+       <div style={{
+           display: 'grid',
+           width: '90%',
+           gridRow: '3/4',
+           gridTemplateColumns: 'auto 1fr',
+           gridGap: '.5em'
+         }}>
+         <span> and I love</span>
+         <ChangingText value="hobby" />
+       </div>
+  </StyledMain>
 )};
 
 export default Home;

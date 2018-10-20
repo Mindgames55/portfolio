@@ -28,16 +28,16 @@ const StyledMenu = styled(posed.div({
   grid-row: 2/4;
   display: grid
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 130px;
-  justify-self: center;
+  grid-template-rows: 1fr 1fr 130px;
   align-self: center;
-  grid-gap: 70px;
-  height: calc(100vh - 100px);
+  justify-items: center;
+  height: calc(100vh - 90px);
+  background: #EDF2F4;
 `;
 
 const StyledLink = styled(Link)`
-  color: white;
-  background: black;
+  color: #EDF2F4;
+  background: #2B2D42;
   width: 70px;
   height: 70px;
   text-decoration: none;

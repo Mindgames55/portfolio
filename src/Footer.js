@@ -13,6 +13,13 @@ const StyledConnect = styled(posed.div({
   justify-items: center;
   grid-column: 1/-1;
   align-items: center;
+  background: #2B2D42;
+  justify-self: stretch;
+
+  a, p {
+    text-decoration: none;
+    color: #EDF2F4;
+  }
 `;
 
 function Footer(props) {
@@ -22,10 +29,9 @@ function Footer(props) {
       <StyledConnect props={props}>
         <p>Lets connect </p>
         <div>
-          <Github size="30"/>
-          <Linkedin size="30"/>
-          <Facebook size="30"/>
-          <Mail size="30"/>
+          <a href='https://github.com/Mindgames55'><Github size="30"/> </a>
+          <a href='https://www.linkedin.com/in/mayguen-ojeda'><Linkedin size="30"/> </a>
+          <a href='mailto:mayguen.ojeda88@gmail.com'><Mail size="30"/> </a>
         </div>
         <p><small>2018 &copy; Mayguen Ojeda </small></p>
       </StyledConnect>

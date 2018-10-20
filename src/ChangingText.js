@@ -4,7 +4,7 @@ import posed, { PoseGroup } from 'react-pose';
 
 const ContainerDiv = styled.div`
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
   width: 100%;
   height: 100%;
 `;
@@ -14,10 +14,13 @@ const SlideIn = styled(posed.p({
   exit: {opacity:0, transition: { delay: 1500}},
   preEnter: {top: '100%', opacity: 1}
 }))`
+margin: 0;
 font-size: 25px;
 position: absolute;
 width: 100%;
-text-align: ${props => (props.value === 'profession')?'right':'center'};
+text-align: ${props => (props.value === 'profession')?'center':'left'};
+font-weight: bold;
+color: #D90429 !important;
 `;
 
 export default class Profession extends React.Component {

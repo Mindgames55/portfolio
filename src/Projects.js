@@ -15,6 +15,13 @@ import Waypoint from 'react-waypoint';
 const StyledProjects = styled.section`
 `;
 
+const StyledButton = styled.button`
+  border: 0;
+  background: #D90429;
+  color: white;
+  padding: 20px;
+`;
+
 const MoreDiv = styled(posed.div({
   open: {x: 0, opacity: 1},
   closed: {x: '-100%', opacity:0}
@@ -36,7 +43,7 @@ const StyledMore = styled(posed.section({
 }))`
   display: grid;
   grid-template-rows: 1fr 130px;
-  background: black;
+  background: #D90429;
   color: white;
   z-index: 10000;
 top: 0;
@@ -52,11 +59,11 @@ export default class Projects extends React.Component {
   }
 
   technologies = [
-    [<ReactLogo size='30' key='react'/>, ' React', <span key='span' style={{fontSize: '30px'}}> | </span>, <Google size='25' key='google' />, ' Maps API'],
-    [<ReactLogo size='30' key='react'/>, ' React'],
-    [<Js size='30' key='js'/>, ' Javascript', <span key='span' style={{fontSize: '30px'}}> | </span> ,' PWA', ' | MVC'],
-    [<Js size='30' key='js'/>, ' Javascript', <span key='span' style={{fontSize: '30px'}}> | </span>, ' ES6'],
-    [<Css3Alt size='30' key='css'/>, ' CSS Grid']
+    [<ReactLogo size='30' color='#61DBFB' key='react'/>, ' React', <span key='span' style={{fontSize: '30px'}}> | </span>, <Google color='#db3236' size='25' key='google' />, ' Maps API'],
+    [<ReactLogo size='30' color='#61DBFB' key='react'/>, ' React'],
+    [<Js size='30' color='#F0DB4F' key='js'/>, ' Javascript', <span key='span' style={{fontSize: '30px'}}> | </span> ,' PWA', ' | MVC'],
+    [<Js size='30' color='#F0DB4F' key='js'/>, ' Javascript', <span key='span' style={{fontSize: '30px'}}> | </span>, ' ES6'],
+    [<Css3Alt size='30' color='' key='css'/>, ' CSS Grid']
   ]
 
   title = [
@@ -120,9 +127,9 @@ export default class Projects extends React.Component {
 
           <MoreDiv pose={this.state.morePose}>
             <h2>Want to see more?</h2>
-            <a href='https://github.com/Mindgames55' target='_blank' rel='noopener noreferrer'><button>Go to my <Github size='30' /> </button></a>
+            <a href='https://github.com/Mindgames55' target='_blank' rel='noopener noreferrer'><StyledButton>Go to my <Github size='30' /> </StyledButton></a>
           </MoreDiv>
-          <Footer pose={this.state.morePose} delay={0}/>
+          {/* <Footer pose={this.state.morePose} delay={0}/>*/}
         </StyledMore>
 
       </StyledProjects>

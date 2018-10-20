@@ -51,7 +51,7 @@ const StyledTitle = styled(SlideInRight)`
 const FittedSpan = styled(Grow)`
   height: 5px;
   border-radius: 5px;
-  background: black;
+  background: #D90429;
   grid-column: 2/3;
   align-self: start;
 `;
@@ -79,20 +79,20 @@ const StyledPanel = styled(SlideInBottom)`
 
   a {
     color: black;
-    opacity: 0.7;
 
     &:hover {
-      opacity: 1;
+      color: #D90429;
     }
   }
 `;
 
 const StyledButton = styled.button`
-  background: black;
-  color: white;
+  background: #2B2D42;
+  color: #EDF2F4;
   border: 0;
   height: 100%
   padding:  10px 15px;
+  border-radius: 5px;
   `;
 
 export default class Project extends React.Component {

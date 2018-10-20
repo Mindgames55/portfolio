@@ -6,6 +6,9 @@ import styled, { ThemeProvider} from 'styled-components';
 import { theme } from './theme/globalStyle'
 import { Route } from 'react-router-dom';
 import Projects from './Projects.js';
+import About from './About.js';
+import Skills from './Skills.js';
+
 
 const StyledApp = styled.div`
   width: 100vw;
@@ -22,6 +25,8 @@ class App extends Component {
           <Header />
           <Route exact path='/' render={() =>   <Home />} />
           <Route path='/projects' render={() =>   <Projects />} />
+          <Route path='/about' render={() =>   <About />} />
+          <Route path='/skills' render={() =>   <Skills />} />
 
         </StyledApp>
       </ThemeProvider>
