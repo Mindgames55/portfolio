@@ -63,7 +63,7 @@ export default class Projects extends React.Component {
     [<ReactLogo size='30' color='#61DBFB' key='react'/>, ' React'],
     [<Js size='30' color='#F0DB4F' key='js'/>, ' Javascript', <span key='span' style={{fontSize: '30px'}}> | </span> ,' PWA', ' | MVC'],
     [<Js size='30' color='#F0DB4F' key='js'/>, ' Javascript', <span key='span' style={{fontSize: '30px'}}> | </span>, ' ES6'],
-    [<Css3Alt size='30' color='' key='css'/>, ' CSS Grid']
+    [<Css3Alt size='30' color='#1673B7' key='css'/>, ' CSS Grid']
   ]
 
   title = [

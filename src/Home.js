@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ChangingText from './ChangingText.js';
-import Logo from './img/logo.png';
+import Logo from './img/logo3.png';
 
 const StyledMain = styled.div`
   display: grid;

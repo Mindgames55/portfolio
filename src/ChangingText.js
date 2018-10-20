@@ -10,9 +10,8 @@ const ContainerDiv = styled.div`
 `;
 
 const SlideIn = styled(posed.p({
-  enter: {top: '0%'},
-  exit: {opacity:0, transition: { delay: 1500}},
-  preEnter: {top: '100%', opacity: 1}
+  enter: {opacity: 1},
+  exit: {opacity:0, transition: { delay: 1500}}
 }))`
 margin: 0;
 font-size: 25px;

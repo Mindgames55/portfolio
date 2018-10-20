@@ -3,10 +3,15 @@ import styled from 'styled-components';
 import { Html5, Css3, Js, ReactLogo, Git, Gulp, Sass} from 'styled-icons/fa-brands';
 import jQuery from './img/jquery.svg';
 import Bootstrap from './img/bs.svg';
+import posed from 'react-pose';
 
 
 
-const StyledDiv = styled.div`
+const StyledDiv = styled(posed.div({
+  SlideOutRight: {x: '100%', opacity: 0},
+  SlideOutLeft: {x: '-100%', opacity: 0},
+  open: {x: 0, opacity: 1}
+}))`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
@@ -67,7 +72,7 @@ const content = [
 const Skills = () => {
   return (
     <div style={{display: 'grid', gridTemplateRows: 'repeat(3, 1fr)'}}>
-      {content.map((el, index) => <StyledDiv  key={index}>{el}</StyledDiv>)}
+      {content.map((el, index) => <StyledDiv  initialPose={(index % 2 === 0)?'SlideOutLeft':'SlideOutRight'} pose='open' key={index}>{el}</StyledDiv>)}
     </div>
   );
 }

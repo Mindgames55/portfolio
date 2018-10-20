@@ -1,6 +1,7 @@
 import React from 'react';
 import  Profile  from './img/profile-small.jpg';
 import styled from 'styled-components';
+import posed from 'react-pose';
 
 const AboutDiv = styled.div`
   display: grid;
@@ -21,9 +22,11 @@ const StyledImg = styled.img`
   border: 3px solid #f6f6f6;
 `;
 
-const PrimaryInfo = styled.div`
+const PrimaryInfo = styled(posed.div({
+  open: {background: '#8D99AE'},
+  close: {background: '#EDF2F4'}
+}))`
   color: #EDF2F4;
-  background: #D90429;
   padding: 20px;
 `;
 
@@ -35,7 +38,7 @@ const About = (props) => {
   return (
     <AboutDiv>
         <StyledImg src={Profile} alt="profile"/>
-        <PrimaryInfo>
+        <PrimaryInfo initialPose='close' pose='open'>
         <p>
         Passionate self taugh web developer. I love unique
         and clean web designs that gives the user the
