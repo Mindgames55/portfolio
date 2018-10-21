@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Facebook, Github, Linkedin, Mail} from 'styled-icons/feather';
+import { Github, Linkedin, Mail} from 'styled-icons/feather';
 import posed from 'react-pose'
 
 const StyledConnect = styled(posed.div({
@@ -27,7 +27,7 @@ function Footer(props) {
   console.log(props);
     return(
       <StyledConnect props={props}>
-        <p>Lets connect </p>
+        <p style={{letterSpacing: '2px'}}>Lets connect </p>
         <div>
           <a href='https://github.com/Mindgames55'><Github size="30"/> </a>
           <a href='https://www.linkedin.com/in/mayguen-ojeda'><Linkedin size="30"/> </a>

@@ -5,12 +5,13 @@ import posed from 'react-pose';
 
 const AboutDiv = styled.div`
   display: grid;
+  grid-template-rows: auto 1fr;
   justify-items: center;
-  align-items: center;
   position: relative;
   top: 70px;
   grid-column: 1/-1;
   text-align: justify;
+
 `;
 
 const StyledImg = styled.img`
@@ -20,6 +21,13 @@ const StyledImg = styled.img`
   position: absolute;
   top: -70px;
   border: 3px solid #f6f6f6;
+
+  @media screen and (min-width: 700px) {
+    width: 180px;
+    height: 180px;
+    top: -30px;
+    left: 30px;
+  }
 `;
 
 const PrimaryInfo = styled(posed.div({
@@ -28,6 +36,10 @@ const PrimaryInfo = styled(posed.div({
 }))`
   color: #EDF2F4;
   padding: 50px 30px;
+
+  @media screen and (min-width: 700px) {
+    padding-left: 240px; 
+  }
 `;
 
 const SecInfo = styled.div`

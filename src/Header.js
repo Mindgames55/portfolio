@@ -77,7 +77,7 @@ export default class MenuButton extends React.Component {
                 <Bottombar pose={pose}></Bottombar>
               </ButtonDiv>
             </Header>
-            {(this.state.open) && <Menu toggleMenu={this.toggleMenu} />}
+            {(this.state.open) && <Menu includeFooter={true} toggleMenu={this.toggleMenu} />}
         </React.Fragment>
       );
     }

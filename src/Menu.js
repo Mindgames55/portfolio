@@ -34,6 +34,15 @@ const StyledMenu = styled(posed.div({
   height: calc(100vh - 140px);
   background: #EDF2F4;
   padding-top: 50px;
+
+  @media screen and (min-width: 700px){
+    grid-row: 1/2;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    height: 100%;
+    align-items: center;
+    padding: 0;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -64,7 +73,7 @@ const Menu = (props) =>
                                                   <p>{link}</p>
                                                 </StyledLink>
                                             )}
-          <Footer foreground="white" background="black"/>
+          {(props.includeFooter) && <Footer foreground="white" background="black"/>}
 
         </StyledMenu>
 export default Menu
