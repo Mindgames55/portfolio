@@ -31,8 +31,9 @@ const StyledMenu = styled(posed.div({
   grid-template-rows: 1fr 1fr 130px;
   align-self: center;
   justify-items: center;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 140px);
   background: #EDF2F4;
+  padding-top: 50px;
 `;
 
 const StyledLink = styled(Link)`

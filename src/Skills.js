@@ -17,6 +17,7 @@ const StyledDiv = styled(posed.div({
   justify-items: center;
   align-items: center;
   color: #EDF2F4;
+  padding: 40px;
 
   :nth-child(1){
     background: #2B2D42;

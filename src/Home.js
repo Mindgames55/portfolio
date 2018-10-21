@@ -5,6 +5,7 @@ import Logo from './img/logo3.png';
 
 const StyledMain = styled.div`
   display: grid;
+  min-height: calc(100vh - 90px);
   grid-template-rows:  90px 1fr 90px;
   position: relative;
   justify-items: center;

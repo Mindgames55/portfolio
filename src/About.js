@@ -27,11 +27,11 @@ const PrimaryInfo = styled(posed.div({
   close: {background: '#EDF2F4'}
 }))`
   color: #EDF2F4;
-  padding: 20px;
+  padding: 50px 30px;
 `;
 
 const SecInfo = styled.div`
-  padding: 20px;
+  padding: 40px 30px;
 `;
 
 const About = (props) => {
