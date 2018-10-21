@@ -35,13 +35,22 @@ const StyledMenu = styled(posed.div({
   background: #EDF2F4;
   padding-top: 50px;
 
+  @media screen and (orientation: landscape){
+    grid-row: 1/2;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    height: 100%;
+    align-items: start;
+    padding-top: 10px;
+  }
+
   @media screen and (min-width: 700px){
     grid-row: 1/2;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     height: 100%;
-    align-items: center;
-    padding: 0;
+    align-items: center !important;
+    padding: 0 !important;
   }
 `;
 

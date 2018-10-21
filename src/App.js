@@ -17,7 +17,15 @@ const StyledApp = styled.div`
   display: grid;
   grid-template-rows: 90px 1fr auto;
 
-  @media screen and (min-width: 700px){
+  @media screen and (orientation: landscape) and (max-width: 700px){
+    grid-template-rows: 110px 1fr !important;
+  }
+
+  @media screen and (orientation: landscape) and (max-width: 1000px){
+    grid-template-rows: 150px 1fr;
+  }
+
+  @media screen and (min-width: 1000px){
     grid-template-rows: 200px 1fr 130px;
   }
 `;
@@ -29,7 +37,7 @@ class App extends Component {
   }
 
   updateViewport = () => {
-    this.setState({isCellPhone: window.innerWidth < 700});
+    this.setState({isCellPhone: window.innerWidth < 600});
   }
 
   componentDidMount() {

@@ -15,7 +15,14 @@ const StyledMain = styled.div`
   background-position: center;
   background-repeat: no-repeat;
 
-  @media screen and (min-width: 700px){
+  @media screen and (orientation: landscape) {
+    grid-template-rows: 10px 1fr 1fr 10px !important;
+    grid-template-columns: 1fr 2fr !important;
+
+  }
+
+
+  @media screen and (min-width: 600px){
     min-height: 100%;
     background-color: #EDF2F4;
     grid-template-columns: 1fr 1fr;
@@ -46,7 +53,7 @@ const ProfessionDiv = styled.div`
   grid-template-columns: auto 1fr auto;
   gridGap: .5em;
 
-  @media screen and (min-width: 700px){
+  @media screen and (min-width: 600px){
     grid-column: 2/-1;
     grid-row: 2/3;
   }
@@ -59,7 +66,7 @@ const HobbyDiv = styled.div`
   grid-template-columns: auto 1fr;
   grid-gap: .5em;
 
-  @media screen and (min-width: 700px){
+  @media screen and (min-width: 600px){
     grid-column: 2/-1;
     grid-row: 3/4;
   }

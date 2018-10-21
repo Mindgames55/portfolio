@@ -7,12 +7,17 @@ import reads from './img/my-reads.png';
 import rest from './img/rest-rev.png';
 import arcade from './img/arcade.png';
 import memory from './img/memory.png';
-import Footer from './Footer.js';
 import posed from 'react-pose';
 import Waypoint from 'react-waypoint';
 
 
 const StyledProjects = styled.section`
+  @media screen and (min-width: 700px){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 50px;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -50,6 +55,12 @@ top: 0;
 width: 100%;
 height: 100vh;
 position: fixed;
+`;
+
+const MakeSpaceDiv = styled.div`
+   height: 200px;
+   grid-column: 1/-1;
+
 `;
 
 export default class Projects extends React.Component {
@@ -121,8 +132,9 @@ export default class Projects extends React.Component {
                                                         title={this.title[index]}>
                                                           {proj}
                                                     </Project>)}
-      <Waypoint onEnter={this.MoreInView} onLeave={this.MoreInView} bottomOffset='200px'/>
-      <div style={{height: '200px'}}></div>
+      <MakeSpaceDiv />
+      <Waypoint onEnter={this.MoreInView} onLeave={this.MoreInView} />
+
       <StyledMore pose={this.state.morePose}>
 
           <MoreDiv pose={this.state.morePose}>
