@@ -12,6 +12,10 @@ const AboutDiv = styled.div`
   grid-column: 1/-1;
   text-align: justify;
 
+  @media screen and (min-width: 1400px){
+    grid-column: 2/3;
+  }
+
 `;
 
 const StyledImg = styled.img`
@@ -28,6 +32,10 @@ const StyledImg = styled.img`
     top: -30px;
     left: 30px;
   }
+
+  @media screen and (min-width: 1400px) {
+    left: calc(50% - 480px);
+  }
 `;
 
 const PrimaryInfo = styled(posed.div({
@@ -38,12 +46,21 @@ const PrimaryInfo = styled(posed.div({
   padding: 50px 30px;
 
   @media screen and (min-width: 700px) {
-    padding-left: 240px; 
+    padding-left: 240px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    padding-right: calc(50% - 480px);
+    padding-left: calc(50% - 240px);
   }
 `;
 
 const SecInfo = styled.div`
   padding: 40px 30px;
+
+  @media screen and (min-width: 1400px) {
+    padding: 40px calc(50% - 480px);
+  }
 `;
 
 const About = (props) => {

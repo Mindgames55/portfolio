@@ -22,12 +22,18 @@ const StyledApp = styled.div`
   }
 
   @media screen and (orientation: landscape) and (max-width: 1000px){
-    grid-template-rows: 150px 1fr;
+    grid-template-rows: 150px 1fr !important;
   }
 
-  @media screen and (min-width: 1000px){
+  @media screen and (min-width: 700px){
     grid-template-rows: 200px 1fr 130px;
   }
+
+  @media screen and (min-width: 1400px){
+    grid-template-rows: 1fr 130px;
+    grid-template-columns: 130px 1fr;
+  }
+
 `;
 
 class App extends Component {

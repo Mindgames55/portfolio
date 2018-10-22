@@ -52,6 +52,12 @@ const StyledMenu = styled(posed.div({
     align-items: center !important;
     padding: 0 !important;
   }
+
+  @media screen and (min-width: 1400px){
+    grid-column: 1/2;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 1fr);
+  }
 `;
 
 const StyledLink = styled(Link)`

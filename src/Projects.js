@@ -18,6 +18,11 @@ const StyledProjects = styled.section`
     grid-template-rows: auto;
     grid-gap: 50px;
   }
+
+  @media screen and (min-width: 1400px){
+    overflow-y: auto;
+    height: calc(100vh - 130px);
+  }
 `;
 
 const StyledButton = styled.button`
@@ -29,7 +34,7 @@ const StyledButton = styled.button`
 
 const MoreDiv = styled(posed.div({
   open: {x: 0, opacity: 1},
-  closed: {x: '-100%', opacity:0}
+  closed: {x: '-100%', opacity:0, zIndex: -400}
 }))`
   width: fit-content;
   display: flex;
@@ -55,6 +60,10 @@ top: 0;
 width: 100%;
 height: 100vh;
 position: fixed;
+
+@media screen and (min-width: 1400px){
+  height: calc(80vh - 130px);
+}
 `;
 
 const MakeSpaceDiv = styled.div`

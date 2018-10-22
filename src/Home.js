@@ -25,10 +25,15 @@ const StyledMain = styled.div`
   @media screen and (min-width: 600px){
     min-height: 100%;
     background-color: #EDF2F4;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 150px 1fr 1fr 150px;
     background-size: contain;
     background-position: left;
+  }
+
+  @media screen and (min-width: 1400px){
+    grid-template-columns: 1fr 1fr;
+    background-position: 75%;
   }
 
 
@@ -51,11 +56,22 @@ const ProfessionDiv = styled.div`
   display: grid;
   width: 90%;
   grid-template-columns: auto 1fr auto;
-  gridGap: .5em;
+  grid-gap: .5em;
 
   @media screen and (min-width: 600px){
+    width: 70%;
     grid-column: 2/-1;
     grid-row: 2/3;
+  }
+
+  @media screen and (min-width: 1000px){
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1400px){
+    grid-column: 1/2;
+    width: 70%;
+    justify-self: right;
   }
 `;
 
@@ -67,9 +83,21 @@ const HobbyDiv = styled.div`
   grid-gap: .5em;
 
   @media screen and (min-width: 600px){
+    width: 70%;
     grid-column: 2/-1;
     grid-row: 3/4;
   }
+
+  @media screen and (min-width: 1000px){
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1400px){
+    grid-column: 1/2;
+    width: 70%
+    justify-self: right;
+  }
+
 `;
 
 
@@ -77,7 +105,7 @@ const HobbyDiv = styled.div`
 const Home = () => {console.log('renderind'); return(
   <StyledMain>
        <ProfessionDiv>
-         <span> I am a</span>
+         <span > I am a</span>
          <ChangingText value="profession" />
          <span>developer</span>
        </ProfessionDiv>
