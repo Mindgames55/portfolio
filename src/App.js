@@ -10,6 +10,7 @@ import About from './About.js';
 import Menu from './Menu';
 import Skills from './Skills.js';
 import Footer from './Footer';
+import './App.css';
 
 const StyledApp = styled.div`
   width: 100vw;

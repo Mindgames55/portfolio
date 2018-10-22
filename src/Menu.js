@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import {Home, Code} from 'styled-icons/material';
 import {LaptopCode} from 'styled-icons/fa-solid/LaptopCode';
@@ -66,7 +66,7 @@ const StyledMenu = styled(posed.div({
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   color: #EDF2F4;
   background: #2B2D42;
   width: 70px;
@@ -89,7 +89,7 @@ const StyledLink = styled(Link)`
 
 const Menu = (props) =>
         <StyledMenu initialPose='close' pose='open'>
-            {menuLinks.map((link, index) =>    <StyledLink key={index} link={link} onClick={props.toggleMenu} theme={props.theme} to={(link === 'home')?'/':link}>
+            {menuLinks.map((link, index) =>    <StyledLink key={index} link={link} onClick={props.toggleMenu} theme={props.theme} exact to={(link === 'home')?'/':`/${link}`}>
                                                   {icons[index]}
                                                   <p>{link}</p>
                                                 </StyledLink>
