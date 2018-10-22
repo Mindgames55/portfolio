@@ -30,7 +30,7 @@ const StyledApp = styled.div`
   }
 
   @media screen and (min-width: 1400px){
-    grid-template-rows: 1fr 130px;
+    grid-template-rows: 1fr;
     grid-template-columns: 130px 1fr;
   }
 
@@ -43,7 +43,7 @@ class App extends Component {
   }
 
   updateViewport = () => {
-    this.setState({isCellPhone: window.innerWidth < 600});
+    this.setState({isCellPhone: window.innerWidth < 700});
   }
 
   componentDidMount() {

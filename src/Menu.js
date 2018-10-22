@@ -34,6 +34,7 @@ const StyledMenu = styled(posed.div({
   height: calc(100vh - 140px);
   background: #EDF2F4;
   padding-top: 50px;
+  z-index: 4000;
 
   @media screen and (orientation: landscape){
     grid-row: 1/2;
@@ -42,6 +43,11 @@ const StyledMenu = styled(posed.div({
     height: 100%;
     align-items: start;
     padding-top: 10px;
+  }
+
+
+  @media screen and (orientation: landscape) and (max-width: 700px){
+    grid-row: 2/3;
   }
 
   @media screen and (min-width: 700px){

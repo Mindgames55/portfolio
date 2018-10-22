@@ -22,6 +22,7 @@ const StyledProjects = styled.section`
   @media screen and (min-width: 1400px){
     overflow-y: auto;
     height: calc(100vh - 130px);
+    grid-row-gap: 0;
   }
 `;
 
@@ -62,13 +63,19 @@ height: 100vh;
 position: fixed;
 
 @media screen and (min-width: 1400px){
-  height: calc(80vh - 130px);
+  position: relative;
+  grid-row: 3/4;
+  grid-column: 2/3;
 }
 `;
 
 const MakeSpaceDiv = styled.div`
    height: 200px;
    grid-column: 1/-1;
+
+   @media screen and (min-width: 1400px){
+    display: none;
+   }
 
 `;
 
