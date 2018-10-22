@@ -59,7 +59,7 @@ const SecInfo = styled.div`
   padding: 40px 30px;
 
   @media screen and (min-width: 1400px) {
-    padding: 40px calc(50% - 480px);
+    padding: calc(50% - 480px);
   }
 `;
 
@@ -88,7 +88,9 @@ const About = (props) => {
          to web development.
          </p>
          <p>I am a happy graduate from the Udacity Front End Web development nanodegree, which was possible thanks to
-         the Grow With Google scholarship program</p>
+         the Grow With Google scholarship program. Certificate <a href='https://graduation.udacity.com/confirm/CRSCNHSD'>here</a></p>
+
+
          </SecInfo>
     </AboutDiv>
   );

@@ -17,7 +17,6 @@ const StyledDiv = styled(posed.div({
   justify-items: center;
   align-items: center;
   color: #EDF2F4;
-  padding: 40px;
 
   :nth-child(1){
     background: #2B2D42;
@@ -72,7 +71,7 @@ const content = [
 
 const Skills = () => {
   return (
-    <div style={{display: 'grid', gridTemplateRows: 'repeat(3, 1fr)'}}>
+    <div style={{display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', height: 'calc(100vh - 90px)'}}>
       {content.map((el, index) => <StyledDiv  initialPose={(index % 2 === 0)?'SlideOutLeft':'SlideOutRight'} pose='open' key={index}>{el}</StyledDiv>)}
     </div>
   );

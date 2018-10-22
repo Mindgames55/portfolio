@@ -1,39 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
 import ChangingText from './ChangingText.js';
-import Logo from './img/logo3.png';
+import Logo from './img/showcase1.jpg';
 
 const StyledMain = styled.div`
   display: grid;
+  width: 100%;
   min-height: calc(100vh - 90px);
   grid-template-rows:  90px 1fr 90px;
-  position: relative;
   justify-items: center;
   align-items: center;
-  background-image: url(${Logo});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: rgba(238, 35, 60, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
 
   @media screen and (orientation: landscape) {
     grid-template-rows: 10px 1fr 1fr 10px !important;
     grid-template-columns: 1fr 2fr !important;
-
   }
-
 
   @media screen and (min-width: 600px){
     min-height: 100%;
-    background-color: #EDF2F4;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 150px 1fr 1fr 150px;
-    background-size: contain;
-    background-position: left;
   }
 
   @media screen and (min-width: 1400px){
     grid-template-columns: 1fr 1fr;
-    background-position: 75%;
   }
 
 
@@ -48,8 +42,15 @@ const StyledMain = styled.div`
     padding: 20px 0;
     color: #2B2D42;
     font-weight: bold;
-
   }
+`;
+
+const BackgroundMain = styled.div`
+  background-image: url(${Logo});
+  background-size: cover;
+  background-position: 75%;
+  background-repeat: no-repeat;
+  position: relative;
 `;
 
 const ProfessionDiv = styled.div`
@@ -103,18 +104,21 @@ const HobbyDiv = styled.div`
 
 
 const Home = () => {console.log('renderind'); return(
-  <StyledMain>
-       <ProfessionDiv>
-         <span > I am a</span>
-         <ChangingText value="profession" />
-         <span>developer</span>
-       </ProfessionDiv>
+  <BackgroundMain>
+    <StyledMain>
+         <ProfessionDiv>
+           <span > I am a</span>
+           <ChangingText value="profession" />
+           <span>developer</span>
+         </ProfessionDiv>
 
-       <HobbyDiv>
-         <span> and I love</span>
-         <ChangingText value="hobby" />
-       </HobbyDiv>
-  </StyledMain>
+         <HobbyDiv>
+           <span> and I love</span>
+           <ChangingText value="hobby" />
+         </HobbyDiv>
+    </StyledMain>
+  </BackgroundMain>
+
 )};
 
 export default Home;
