@@ -12,10 +12,12 @@ cursor: pointer;
 `;
 
 const Header = styled.div`
-  height: 100%
   display: flex;
+  z-index: 4000;
   align-items: center;
-  margin: 0 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px
 `;
 
 const StyledSpan = styled.span`
@@ -23,7 +25,7 @@ const StyledSpan = styled.span`
   position: absolute;
   height: 4px;
   width: 100%;
-  background: #000;
+  background: #2B2D42;
   border-radius: 4px;
   opacity: 1;
   left: 0;

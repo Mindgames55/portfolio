@@ -16,7 +16,7 @@ const StyledApp = styled.div`
   width: 100vw;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 90px 1fr auto;
+  grid-template-rows: 100vh auto;
 
   @media screen and (orientation: landscape) and (max-width: 700px){
     grid-template-rows: 110px 1fr !important;

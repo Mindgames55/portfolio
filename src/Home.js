@@ -6,14 +6,13 @@ import Logo from './img/showcase1.jpg';
 const StyledMain = styled.div`
   display: grid;
   width: 100%;
-  min-height: calc(100vh - 90px);
-  grid-template-rows:  90px 1fr 90px;
+  height: 100%;
+  grid-template-rows:  130px auto auto;
   justify-items: center;
+  align-content: center;
   align-items: center;
-  background-color: rgba(238, 35, 60, 0.3);
-  position: absolute;
-  top: 0;
-  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+
 
   @media screen and (orientation: landscape) {
     grid-template-rows: 10px 1fr 1fr 10px !important;
@@ -40,17 +39,14 @@ const StyledMain = styled.div`
     font-size: 25px;
     margin: 0;
     padding: 20px 0;
-    color: #2B2D42;
-    font-weight: bold;
   }
 `;
 
 const BackgroundMain = styled.div`
   background-image: url(${Logo});
   background-size: cover;
-  background-position: 75%;
+  background-position: center;
   background-repeat: no-repeat;
-  position: relative;
 `;
 
 const ProfessionDiv = styled.div`
@@ -79,7 +75,6 @@ const ProfessionDiv = styled.div`
 const HobbyDiv = styled.div`
   display: grid;
   width: 90%;
-  grid-row: 3/4;
   grid-template-columns: auto 1fr;
   grid-gap: .5em;
 
@@ -106,6 +101,7 @@ const HobbyDiv = styled.div`
 const Home = () => {console.log('renderind'); return(
   <BackgroundMain>
     <StyledMain>
+        <h2>HELLO</h2>
          <ProfessionDiv>
            <span > I am a</span>
            <ChangingText value="profession" />

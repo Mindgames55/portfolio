@@ -12,6 +12,8 @@ import Waypoint from 'react-waypoint';
 
 
 const StyledProjects = styled.section`
+  padding-top: 90px;
+
   @media screen and (min-width: 700px){
     display: grid;
     grid-template-columns: 1fr 1fr;

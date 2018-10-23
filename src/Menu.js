@@ -25,16 +25,16 @@ const StyledMenu = styled(posed.div({
   open: {y: 0, staggerChildren: 100},
   close: {y: '-100%'}
 }))`
-  grid-row: 2/4;
+  grid-row: 1/2;
   display: grid
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 1fr 130px;
   align-self: center;
   justify-items: center;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 90px);
   background: #EDF2F4;
-  padding-top: 50px;
-  z-index: 4000;
+  padding-top: 90px;
+  z-index: 3000;
 
   @media screen and (orientation: landscape){
     grid-row: 1/2;

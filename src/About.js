@@ -8,7 +8,7 @@ const AboutDiv = styled.div`
   grid-template-rows: auto 1fr;
   justify-items: center;
   position: relative;
-  top: 70px;
+  top: 160px;
   grid-column: 1/-1;
   text-align: justify;
 
