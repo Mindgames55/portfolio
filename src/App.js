@@ -74,10 +74,10 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <StyledApp>
           <Menu />
-          <Route exact path='/my-portfolio' render={() =>   <Home />} />
-          <Route path='/my-portfolio/projects' render={() =>   <Projects />} />
-          <Route path='/my-portfolio/about' render={() =>   <About />} />
-          <Route path='/my-portfolio/skills' render={() =>   <Skills />} />
+          <Route exact path='/portfolio' render={() =>   <Home />} />
+          <Route exact path='/portfolio/projects' render={() =>   <Projects />} />
+          <Route exact path='/portfolio/about' render={() =>   <About />} />
+          <Route exact path='/portfolio/skills' render={() =>   <Skills />} />
           <Footer />
         </StyledApp>
       </ThemeProvider>
