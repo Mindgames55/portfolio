@@ -11,7 +11,8 @@ const SkillsSection = styled.section`
   padding-top: 90px;
   background: #EDF2F4;
 
-  @media screen and (orientation: landscape) {
+  @media screen and (orientation: landscape),
+  screen and (min-width: 700px) and (orientation: portrait) {
     grid-row: 2/3;
     padding-top: 0;
   }
@@ -35,12 +36,19 @@ const StyledDiv = styled(posed.div({
   :nth-child(2){
     background: #2B2D42;
   }
+
   :nth-child(1){
     background: #EDF2F4;
     color:  grey;
+
   }
   :nth-child(3){
     background #8D99AE;
+
+    @media screen and (min-width: 700px) and (orientation: portrait) {
+      background: #EDF2F4;
+      color:  grey;
+    }
   }
 
   p:nth-child(1) {
