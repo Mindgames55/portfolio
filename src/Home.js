@@ -12,18 +12,7 @@ const StyledMain = styled.div`
   align-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.5);
-
-
-  @media screen and (orientation: landscape) {
-    grid-template-rows: 10px 1fr 1fr 10px !important;
-    grid-template-columns: 1fr 2fr !important;
-  }
-
-  @media screen and (min-width: 600px){
-    min-height: 100%;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 150px 1fr 1fr 150px;
-  }
+  position: absolute;
 
   @media screen and (min-width: 1400px){
     grid-template-columns: 1fr 1fr;
@@ -47,6 +36,12 @@ const BackgroundMain = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+
+
+  @media screen and (orientation: landscape) {
+    min-height: 100vh;
+  }
 `;
 
 const ProfessionDiv = styled.div`
@@ -54,46 +49,15 @@ const ProfessionDiv = styled.div`
   width: 90%;
   grid-template-columns: auto 1fr auto;
   grid-gap: .5em;
-
-  @media screen and (min-width: 600px){
-    width: 70%;
-    grid-column: 2/-1;
-    grid-row: 2/3;
-  }
-
-  @media screen and (min-width: 1000px){
-    width: 50%;
-  }
-
-  @media screen and (min-width: 1400px){
-    grid-column: 1/2;
-    width: 70%;
-    justify-self: right;
-  }
+  max-width: 350px;
 `;
 
 const HobbyDiv = styled.div`
   display: grid;
   width: 90%;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   grid-gap: .5em;
-
-  @media screen and (min-width: 600px){
-    width: 70%;
-    grid-column: 2/-1;
-    grid-row: 3/4;
-  }
-
-  @media screen and (min-width: 1000px){
-    width: 50%;
-  }
-
-  @media screen and (min-width: 1400px){
-    grid-column: 1/2;
-    width: 70%
-    justify-self: right;
-  }
-
+  max-width: 350px;
 `;
 
 
@@ -111,6 +75,7 @@ const Home = () => {console.log('renderind'); return(
          <HobbyDiv>
            <span> and I love</span>
            <ChangingText value="hobby" />
+          <span> </span>
          </HobbyDiv>
     </StyledMain>
   </BackgroundMain>

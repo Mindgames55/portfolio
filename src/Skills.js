@@ -5,7 +5,17 @@ import jQuery from './img/jquery.svg';
 import Bootstrap from './img/bs.svg';
 import posed from 'react-pose';
 
+const SkillsSection = styled.section`
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  padding-top: 90px;
+  background: #EDF2F4;
 
+  @media screen and (orientation: landscape) {
+    grid-row: 2/3;
+    padding-top: 0;
+  }
+`;
 
 const StyledDiv = styled(posed.div({
   SlideOutRight: {x: '100%', opacity: 0},
@@ -17,6 +27,10 @@ const StyledDiv = styled(posed.div({
   justify-items: center;
   align-items: center;
   color: #EDF2F4;
+
+  @media screen and (orientation: landscape) {
+    padding: 40px;
+  }
 
   :nth-child(2){
     background: #2B2D42;
@@ -71,9 +85,9 @@ const content = [
 
 const Skills = () => {
   return (
-    <div style={{display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', paddingTop: '90px', background: '#EDF2F4'}}>
+    <SkillsSection>
       {content.map((el, index) => <StyledDiv  initialPose={(index % 2 === 0)?'SlideOutLeft':'SlideOutRight'} pose='open' key={index}>{el}</StyledDiv>)}
-    </div>
+    </SkillsSection>
   );
 }
 

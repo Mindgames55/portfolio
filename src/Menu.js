@@ -47,7 +47,8 @@ const StyledMenu = styled(posed.div({
 
 
   @media screen and (orientation: landscape) and (max-width: 700px){
-    grid-row: 2/3;
+    grid-row: 1/2;
+    padding-left: 90px;
   }
 
   @media screen and (min-width: 700px){
