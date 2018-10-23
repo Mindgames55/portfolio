@@ -69,7 +69,7 @@ const SecInfo = styled.div`
   }
 
   @media screen and (min-width: 1400px) {
-    padding: calc(50% - 480px);
+    padding: 40px calc(50% - 480px);
   }
 `;
 

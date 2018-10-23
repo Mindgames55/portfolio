@@ -14,11 +14,6 @@ const StyledMain = styled.div`
   background-color: rgba(255, 255, 255, 0.5);
   position: absolute;
 
-  @media screen and (min-width: 1400px){
-    grid-template-columns: 1fr 1fr;
-  }
-
-
   h2{
     font-size: 38px;
     margin: 0;
@@ -46,6 +41,11 @@ const BackgroundMain = styled.div`
   @media screen and (min-width: 700px) {
     min-height: 100%;
   }
+
+  @media screen and (min-width: 1400px) {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
 `;
 
 const ProfessionDiv = styled.div`
@@ -62,9 +62,11 @@ const HobbyDiv = styled.div`
   grid-template-columns: auto 1fr auto;
   grid-gap: .5em;
   max-width: 350px;
+
+  @media screen and (min-width: 1000px) {
+    max-width: 400px;
+  }
 `;
-
-
 
 const Home = () => {console.log('renderind'); return(
   <BackgroundMain>

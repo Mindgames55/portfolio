@@ -24,6 +24,10 @@ const StyledConnect = styled(posed.div({
   @media screen and (orientation: landscape) and (max-height: 500px) {
     display: none !important;
   }
+
+  @media screen and (min-width: 1400px) {
+    grid-column: 2/3 !important;
+  }
 `;
 
 function Footer(props) {

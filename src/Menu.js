@@ -64,6 +64,7 @@ const StyledMenu = styled(posed.div({
     grid-column: 1/2;
     grid-template-columns: 100%;
     grid-template-rows: repeat(4, 1fr);
+    grid-row: 1/3;
   }
 `;
 

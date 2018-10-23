@@ -16,6 +16,14 @@ const SkillsSection = styled.section`
     grid-row: 2/3;
     padding-top: 0;
   }
+
+  @media screen and (min-width: 1400px) {
+    grid-row: 1/2 !important;
+    overflow-y: scroll;
+    height: calc(100vh - 130px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100%;
+  }
 `;
 
 const StyledDiv = styled(posed.div({
@@ -33,14 +41,27 @@ const StyledDiv = styled(posed.div({
     padding: 40px;
   }
 
+  @media screen and (min-width: 1400px) {
+    grid-template-rows: 100px auto auto;
+    align-content: center;
+  }
+
   :nth-child(2){
     background: #2B2D42;
+
+    @media screen and (min-width: 1400px) {
+      background #EDF2F4;
+      color: grey;
+    }
   }
 
   :nth-child(1){
     background: #EDF2F4;
     color:  grey;
 
+    @media screen and (min-width: 1400px) {
+      background white;
+    }
   }
   :nth-child(3){
     background #8D99AE;
@@ -49,6 +70,10 @@ const StyledDiv = styled(posed.div({
     screen and (min-width: 1000px) and (orientation: landscape) {
       background: #EDF2F4;
       color:  grey;
+    }
+
+    @media screen and (min-width: 1400px) {
+      background white;
     }
   }
 

@@ -32,7 +32,7 @@ const StyledApp = styled.div`
   }
 
   @media screen and (min-width: 1400px){
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 130px;
     grid-template-columns: 130px 1fr;
   }
 
