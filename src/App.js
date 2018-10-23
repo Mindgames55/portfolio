@@ -26,7 +26,8 @@ const StyledApp = styled.div`
     grid-template-rows: 150px 1fr;
   }
 
-  @media screen and (min-width: 700px) and (orientation: portrait){
+  @media screen and (min-width: 700px) and (orientation: portrait),
+  screen and (min-width: 1000px) and (orientation: landscape) {
     grid-template-rows: 200px 1fr 130px;
   }
 

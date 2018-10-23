@@ -45,7 +45,8 @@ const StyledDiv = styled(posed.div({
   :nth-child(3){
     background #8D99AE;
 
-    @media screen and (min-width: 700px) and (orientation: portrait) {
+    @media screen and (min-width: 700px) and (orientation: portrait),
+    screen and (min-width: 1000px) and (orientation: landscape) {
       background: #EDF2F4;
       color:  grey;
     }
