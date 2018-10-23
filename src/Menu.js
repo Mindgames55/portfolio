@@ -91,7 +91,7 @@ const StyledLink = styled(NavLink)`
 
 const Menu = (props) =>
         <StyledMenu initialPose='close' pose='open'>
-            {menuLinks.map((link, index) =>    <StyledLink key={index} link={link} onClick={props.toggleMenu} theme={props.theme} exact to={(link === 'home')?'/portfolio':`/portfolio/${link}`}>
+            {menuLinks.map((link, index) =>    <StyledLink key={index} link={link} onClick={props.toggleMenu} theme={props.theme} exact to={(link === 'home')?'/':`/${link}`}>
                                                   {icons[index]}
                                                   <p>{link}</p>
                                                 </StyledLink>

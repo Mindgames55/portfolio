@@ -7,7 +7,7 @@ const StyledMain = styled.div`
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-rows:  130px auto auto;
+  grid-template-rows:  130px 120px 120px;
   justify-items: center;
   align-content: center;
   align-items: center;
@@ -62,6 +62,7 @@ const HobbyDiv = styled.div`
   grid-template-columns: auto 1fr auto;
   grid-gap: .5em;
   max-width: 350px;
+  align-self: stretch;
 
   @media screen and (min-width: 1000px) {
     max-width: 400px;
