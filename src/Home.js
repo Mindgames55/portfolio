@@ -42,6 +42,10 @@ const BackgroundMain = styled.div`
   @media screen and (orientation: landscape) {
     min-height: 100vh;
   }
+
+  @media screen and (min-width: 700px) {
+    min-height: 100%;
+  }
 `;
 
 const ProfessionDiv = styled.div`

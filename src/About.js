@@ -12,6 +12,12 @@ const AboutDiv = styled.div`
   grid-column: 1/-1;
   text-align: justify;
 
+  @media screen and (min-width: 700px){
+    top: 0;
+    padding-top: 60px;
+    background: #EDF2F4
+  }
+
   @media screen and (min-width: 1400px){
     grid-column: 2/3;
   }
@@ -29,7 +35,7 @@ const StyledImg = styled.img`
   @media screen and (min-width: 700px) {
     width: 180px;
     height: 180px;
-    top: -30px;
+    top: 30px;
     left: 30px;
   }
 
@@ -57,6 +63,10 @@ const PrimaryInfo = styled(posed.div({
 
 const SecInfo = styled.div`
   padding: 40px 30px;
+
+  @media screen and (min-width: 700px) {
+    background: #f6f6f6;
+  }
 
   @media screen and (min-width: 1400px) {
     padding: calc(50% - 480px);

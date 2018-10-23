@@ -22,8 +22,8 @@ const StyledApp = styled.div`
     grid-template-rows: 110px 1fr !important;
   }
 
-  @media screen and (min-width: 700px){
-    grid-template-rows: 200px 1fr 130px;
+  @media screen and (min-width: 700px) and (max-height: 500px){
+    grid-template-rows: 150px 1fr;
   }
 
   @media screen and (min-width: 1400px){

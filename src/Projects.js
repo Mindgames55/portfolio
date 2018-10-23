@@ -19,6 +19,7 @@ const StyledProjects = styled.section`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-gap: 50px;
+    padding-top: 0;
   }
 
   @media screen and (min-width: 1400px){
