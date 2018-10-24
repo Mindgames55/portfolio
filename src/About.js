@@ -1,5 +1,5 @@
 import React from 'react';
-import  Profile  from './img/profile-small.jpg';
+import  Profile  from './img/profile-medium.jpg';
 import styled from 'styled-components';
 import posed from 'react-pose';
 
@@ -24,9 +24,12 @@ const AboutDiv = styled.div`
 
 `;
 
-const StyledImg = styled.img`
-  width: 100px;
-  height: 100px;
+const StyledImg = styled.div`
+  background-image: url(${Profile});
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   position: absolute;
   top: -70px;
