@@ -91,7 +91,7 @@ export default class Projects extends React.Component {
   technologies = [
     [<ReactLogo size='30' color='#61DBFB' key='react'/>, ' React', <span key='span' style={{fontSize: '30px'}}> | </span>, <Google color='#db3236' size='25' key='google' />, ' Maps API'],
     [<ReactLogo size='30' color='#61DBFB' key='react'/>, ' React'],
-    [<Js size='30' color='#F0DB4F' key='js'/>, ' Javascript', <span key='span' style={{fontSize: '30px'}}> | </span> ,' PWA', ' | MVC'],
+    [<Js size='30' color='#F0DB4F' key='js'/>, ' Javascript', <span key='span' style={{fontSize: '30px'}}> | </span> ,' PWA', <span key='span' style={{fontSize: '30px'}}> | </span>, 'MVC'],
     [<Js size='30' color='#F0DB4F' key='js'/>, ' Javascript', <span key='span' style={{fontSize: '30px'}}> | </span>, ' ES6'],
     [<Css3Alt size='30' color='#1673B7' key='css'/>, ' CSS Grid']
   ]
@@ -120,7 +120,7 @@ export default class Projects extends React.Component {
 
   link = [
     ['https://github.com/Mindgames55/Recover','https://mindgames55.github.io/Recover/'],
-    ['https://github.com/Mindgames55/My-reads-App','https://github.com/Mindgames55/My-reads-App'],
+    ['https://github.com/Mindgames55/My-reads-App','https://mindgames55.github.io/My-reads-App'],
     ['https://github.com/Mindgames55/restaurant-reviews-app','https://mindgames55.github.io/restaurant-reviews-app/'],
     ['https://github.com/Mindgames55/arcade-game','https://mindgames55.github.io/arcade-game/'],
     ['https://github.com/Mindgames55/Memory-game','https://mindgames55.github.io/Memory-game/']
